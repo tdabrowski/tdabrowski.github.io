@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+section {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
+
+h1 {
+    font-family: Arial;
+}
+
+.joke {
+    max-width: 50vw;
+    margin-top:0.5rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.generate {
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    padding: 0.6rem 0.6rem;
+}
