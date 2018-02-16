@@ -4,6 +4,7 @@
     padding: 0;
 }
 
+
 .content {
     animation: showContent 2.5s 1 ease-out;
     -moz-animation: showContent 2.5s 1 ease-out;
