@@ -1,7 +1,7 @@
 $(function(){
 
     let $title = $('.title');
-    let $url = 'http://api.icndb.com/jokes/random';
+    let $url = 'https://api.icndb.com/jokes/random';
     let $button = $('.generate');
 
     function responseHandler(response,element){
