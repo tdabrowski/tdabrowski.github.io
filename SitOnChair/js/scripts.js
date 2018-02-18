@@ -104,13 +104,17 @@ function hiddenHeader(moveover,moveout,imgBoxes){
 	var boxes = document.querySelectorAll(imgBoxes);
 	for(var i=0;i<boxes.length;i++){
 		boxes[i].addEventListener(moveover,function(){
-			this.lastElementChild.style.display = 'none';
+			//this.lastElementChild.style.display = 'none';
+			//this.lastElementChild.classList.toggle('box_hidden');
+			this.querySelector('.sect2__img__head').classList.toggle('box_hidden');
 			this.style.overflow = 'hidden';
 			this.firstElementChild.style.transform = 'scale(1.05,1.05)';
 			this.firstElementChild.style.transition = '1s';
 		});
 		boxes[i].addEventListener(moveout,function(){
-			this.lastElementChild.style.display = 'block';
+			//this.lastElementChild.style.display = 'block';
+			//this.lastElementChild.classList.toggle('box_hidden');
+			this.querySelector('.sect2__img__head').classList.toggle('box_hidden');
 			this.firstElementChild.style.transform = 'scale(1,1)';
 			this.firstElementChild.style.transition = '1s';
 		});
@@ -182,6 +186,33 @@ function burger(breakpoint){
 		}
 	});
 }
+
+
+/**Function for view single image from gallery
+* @param {string} pictureList selector all li elements with pictures
+*/
+function viewImage(pictureList){
+	let pictures = document.querySelectorAll(pictureList);
+	let body = document.querySelector('body');
+	pictures.forEach((el,i)=>{
+		el.addEventListener('click',(e)=>{
+			let div = document.createElement('div');
+			let img = document.createElement('img');
+			let button = document.createElement('button');
+			img.setAttribute('src',e.target.getAttribute('src'));
+			div.classList.add('fullScreen');
+			button.classList.add('close');
+			button.innerText = 'Close';
+			div.appendChild(img);
+			div.appendChild(button);
+			body.appendChild(div);
+			button.addEventListener('click',(e)=>{
+				div.parentElement.removeChild(div);
+			});
+		});
+	});
+}
+
 
 /**
 *Calculator of chair cost with custom elements
@@ -368,6 +399,7 @@ manageMenu('mouseover','mouseout','.head__nav__li');
 manageSlider('next','previous','.sect1__list__item','slide__visible','slide__hidden');
 hiddenHeader('mouseover','mouseout','.sect2__img__box');
 burger(mob);
+viewImage('.sect2__img');
 
 //end of file
 });
