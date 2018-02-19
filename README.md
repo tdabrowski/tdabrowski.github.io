@@ -11,3 +11,6 @@ Simple site with random information about Chuck in HTML, CSS and jQuery with Aja
 
 ## 10WAYS
 Sample page of fictional company with realized in ReactJS and Sass available on https://tdabrowski.github.io/TenWays/
+
+## REACT
+Automatic slide show available on https://tdabrowski.github.io/React/
