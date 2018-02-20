@@ -21,6 +21,7 @@ $(function(){
         });
     }
 
+    loadContent($url,responseHandler,$title);
     let loop = setInterval(()=>{
         loadContent($url,responseHandler,$title);
     },10000);
